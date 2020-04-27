@@ -10,10 +10,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_27_074950) do
+ActiveRecord::Schema.define(version: 2020_04_27_083629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.bigint "super_category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["super_category_id"], name: "index_categories_on_super_category_id"
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.string "name"
+    t.string "icon"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "headers", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.bigint "category_id"
+    t.string "name"
+    t.text "description"
+    t.integer "year"
+    t.float "price"
+    t.float "volume"
+    t.bigint "country_id"
+    t.bigint "header_id"
+    t.boolean "premium", default: false
+    t.boolean "fresh", default: false
+    t.boolean "barthel_special", default: false
+    t.bigint "winery_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_products_on_category_id"
+    t.index ["country_id"], name: "index_products_on_country_id"
+    t.index ["header_id"], name: "index_products_on_header_id"
+    t.index ["winery_id"], name: "index_products_on_winery_id"
+  end
+
+  create_table "super_categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +75,16 @@ ActiveRecord::Schema.define(version: 2020_04_27_074950) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "wineries", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "categories", "super_categories"
+  add_foreign_key "products", "categories"
+  add_foreign_key "products", "countries"
+  add_foreign_key "products", "headers"
+  add_foreign_key "products", "wineries"
 end
