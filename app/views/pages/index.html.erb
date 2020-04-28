@@ -1,13 +1,16 @@
 
-
+<%= simple_form_for :products, url: products_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+  <%= f.input :query, input_html: {value: ""} %>
+  <%= f.submit "Search", class: "btn btn-primary" %>
+<% end %>
 
 
 <% @super_categories.each do |super_category| %>
   <h1><%= super_category.name %></h1>
   <% super_category.categories.each do |category| %>
-      <%= simple_form_for :category, url: products_path, method:"GET" do |f| %>
-        <% f.input :category, input_html: {value: category.name }  %>
-        <%= f.submit "#{category.name }"%>
+      <%= simple_form_for :products, url: products_path, method:"GET" do |f| %>
+        <%= f.input :category, input_html: {value: category.name }, as: 'hidden'  %>
+        <%= f.submit "#{category.name}"%>
       <% end %>
 
   <% end %>

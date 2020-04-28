@@ -20,7 +20,7 @@ bubbly = SuperCategory.create!(name: 'Bubbly')
 kaffee = SuperCategory.create!(name: 'Kaffe')
 barthel_spezial = SuperCategory.create!(name: 'Barthel Spezial')
 
-Category.create!(name: 'Weißwein', super_category: wein)
+weißwein = Category.create!(name: 'Weißwein', super_category: wein)
 Category.create!(name: 'Rotwein', super_category: wein)
 Category.create!(name: 'Rose', super_category: wein)
 Category.create!(name: 'Süßwein', super_category: wein)
@@ -42,5 +42,7 @@ Category.create!(name: 'Barthel Premium Kaffee', super_category: kaffee)
 Country.create!(name: 'Frankreich')
 
 Header.create!(name: 'Aweseome header')
+Product.create!(name: 'Aweseome wine', category: weißwein)
+
 
 puts' Seeds erstellt'
