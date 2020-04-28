@@ -6,6 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts' Erstelle Seeds'
+
+Product.destroy_all
+Header.destroy_all
+Country.destroy_all
+Category.destroy_all
 SuperCategory.destroy_all
 
 

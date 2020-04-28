@@ -5,5 +5,7 @@ class PagesController < ApplicationController
   end
 
   def index
+    @super_categories = SuperCategory.includes(:categories)
+    @product = Product.new
   end
 end
