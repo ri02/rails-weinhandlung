@@ -1,12 +1,37 @@
-.navbar-lewagon {
-  justify-content: space-between;
+.nav{
   background: white;
+  border-bottom: green ;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.nav-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  height: 60px;
 }
 
-.navbar-lewagon .navbar-brand img {
+.nav-burger {
+  display: none;
+
+}
+
+@media (max-width: 1000px) {
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+  .nav-item {
+      display: none;
+    }
+
+  .nav-burger {
+  display: block;
   width: 40px;
+  margin: 0.5em;
+  align: right;
+  }
+
 }
