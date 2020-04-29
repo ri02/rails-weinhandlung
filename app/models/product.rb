@@ -4,4 +4,19 @@ class Product < ApplicationRecord
   belongs_to :winery, optional: true
   belongs_to :header, optional: true
 
+
+  include PgSearch::Model
+  pg_search_scope :global_search,
+    against: [ :name, :description],
+    associated_against: {
+      category: [ :name],
+      country: [ :name],
+      winery: [ :name],
+      header: [ :name],
+
+    },
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
 end

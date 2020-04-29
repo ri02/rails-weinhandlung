@@ -3,13 +3,9 @@ class ProductsController < ApplicationController
 
   def index
     if search_params[:query].present?
-      sql_query = "products.name ILIKE :query \
-       OR categories.name ILIKE :query\
-       "
-      @products = Product.joins(:category).where(sql_query, query: "%#{search_params[:query]}%")
+      @products = Product.global_search(search_params[:query])
     else
-      @category_id = Category.find_by_name(search_params[:category])
-      @products = Product.where(category_id: @category_id)
+      @products = Product.joins(:category).where("categories.name = ?", search_params[:category])
     end
 
   end

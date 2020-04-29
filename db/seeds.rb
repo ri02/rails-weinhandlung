@@ -21,7 +21,7 @@ kaffee = SuperCategory.create!(name: 'Kaffe')
 barthel_spezial = SuperCategory.create!(name: 'Barthel Spezial')
 
 weißwein = Category.create!(name: 'Weißwein', super_category: wein)
-Category.create!(name: 'Rotwein', super_category: wein)
+rotwein = Category.create!(name: 'Rotwein', super_category: wein)
 Category.create!(name: 'Rose', super_category: wein)
 Category.create!(name: 'Süßwein', super_category: wein)
 
@@ -42,7 +42,10 @@ Category.create!(name: 'Barthel Premium Kaffee', super_category: kaffee)
 Country.create!(name: 'Frankreich')
 
 Header.create!(name: 'Aweseome header')
-Product.create!(name: 'Aweseome wine', category: weißwein)
+Product.create!(name: 'BARTHEL Tempranillo ', description: 'Seleccion especial de Don Tomaso. Ein idealer Begleiter zu jedem Essen.13 vol.%. 6 Monate Barrica', year: 2015, volume: 0.75, price: 5.90, category: rotwein)
+Product.create!(name: 'PAGO DE SALAMANDER  Reserva ', description: 'Vino de Yema
+Kirschrote Farbe. Feine Intensität der Aromen, dezente Holztöne durch 24 monatige Barriquelagerung.Anfängliche feine  Tanine, die nach entspanntem Dekantieren herrliche Aromen freisetzen: Nelke,Tabak,Kaffee. Gute Struktur. Nachhaltig.  100 % Tempranillo.14,5 vol.%', year: 2013, volume: 0.75, price: 15.90, category: rotwein)
+Product.create!(name: 'BARTHEL Tempranillo ', description: 'Seleccion especial de Don Tomaso. Ein idealer Begleiter zu jedem Essen.13 vol.%. 6 Monate Barrica', year: 2015, volume: 0.75, price: 5.90, category: rotwein)
 
 
 puts' Seeds erstellt'
