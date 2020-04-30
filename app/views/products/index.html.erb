@@ -4,15 +4,11 @@
   <% if @super_category.present? %>
     <h1><%= @super_category.name %></h1>
     <%@categories.each do |category| %>
-    <h2><%= category.name %></h2>
-
-    <% category.headers.each do |header| %>
-       <h3><%= header.name %><h3>
-       <% header.products.each do |product| %>
-       <p><%= product.name %></p>
-       <% end %>
-      <% end %>
-    <% end %>
+     <h2><%= category.name %></h2>
+     <% end %>
+       <% @products.each do|product| %>
+   <%= product.name %>
+  <% end %>
 
 
 
