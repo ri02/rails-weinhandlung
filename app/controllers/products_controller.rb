@@ -5,19 +5,12 @@ class ProductsController < ApplicationController
   def index
     @super_categories= SuperCategory.all
     if search_params[:super_category].present?
-      @super_category = SuperCategory.find_by(name: search_params[:super_category])
       @categories = Category.joins(:super_category).where("super_categories.name = ?", search_params[:super_category]).includes(:headers, :products)
-
-
-
-
-
-
     elsif search_params[:query].present?
+      @search = 1 #until pg:multisearchable inculded
       @products = Product.global_search(search_params[:query])
     else
-      @category = Category.find_by(name: search_params[:category])
-      @products = Product.joins(:category).where("categories.name = ?", search_params[:category])
+      @categories = [Category.find_by(name: search_params[:category])]
     end
 
   end
