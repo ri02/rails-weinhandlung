@@ -1,13 +1,32 @@
 <div class="nav">
  <div class= "nav-list">
-  <p class="nav-home">Home</p>
+  <p class="nav-list-home">Home</p>
   <% super_categories.each do |super_category| %>
-    <%= button_to "#{super_category.name}", products_path, method: :get, params: {products: {super_category: super_category.name}}, class: "nav-item" %>
+    <%= button_to "#{super_category.name}", products_path, method: :get, params: {products: {super_category: super_category.name}}, class: "nav-list-item" %>
   <% end %>
-  <p class="nav-item">Warenkorb</p>
-  <p class="nav-burger"><i class="fas fa-bars"></i></p>
-
+  <p class="nav-list-item">Warenkorb</p>
+  <p class="nav-list-burger"><i id="burger-icon" class="fas fa-bars"></i></p>
  </div>
 </div>
+
+<div class="sidebar-box">
+  <div class="sidebar-grey"></div>
+  <div class="sidebar">
+    <div class= "sidebar-list">
+     <p class="sidebar-list-home">Home <i id="arrow-icon" class="fas fa-chevron-right"></i></p>
+     <% super_categories.each do |super_category| %>
+       <%= button_to "#{super_category.name}", products_path, method: :get, params: {products: {super_category: super_category.name}}, class: "sidebar-list-item" %>
+     <% end %>
+     <p class="sidebar-list-item">Warenkorb</p>
+    </div>
+    <div class="sidebar-footer">
+      <p>test test </p>
+    </div>
+  </div>
+
+</div>
+
+
+
 
 

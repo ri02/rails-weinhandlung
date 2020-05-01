@@ -12,7 +12,6 @@ class ProductsController < ApplicationController
     else
       @categories = [Category.find_by(name: search_params[:category])]
     end
-
   end
 
 private

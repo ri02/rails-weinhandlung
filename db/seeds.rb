@@ -42,8 +42,12 @@ Category.create!(name: 'Barthel Premium Kaffee', super_category: kaffee)
 Country.create!(name: 'Frankreich')
 
 header1 = Header.create!(name: 'Aweseome header')
+header2 = Header.create!(name: 'Adalusia ')
+header3 = Header.create!(name: 'Popeldiwutz')
 
-Product.create!(name: 'BARTHEL Tempranillo ', description: 'Seleccion especial de Don Tomaso. Ein idealer Begleiter zu jedem Essen.13 vol.%. 6 Monate Barrica', year: 2015, volume: 0.75, price: 5.90, category: rotwein, header:header1)
+Product.create!(name: 'BARTHEL 1 ', description: 'Seleccion especial de Don Tomaso. Ein idealer Begleiter zu jedem Essen.13 vol.%. 6 Monate Barrica', year: 2015, volume: 0.75, price: 5.90, category: rotwein, header:header1)
+Product.create!(name: 'BARTHEL 2 ', description: 'Seleccion especial de Don Tomaso. Ein idealer Begleiter zu jedem Essen.13 vol.%. 6 Monate Barrica', year: 2015, volume: 0.75, price: 5.90, category: rotwein, header:header2)
+Product.create!(name: 'BARTHEL 3 ', description: 'Seleccion especial de Don Tomaso. Ein idealer Begleiter zu jedem Essen.13 vol.%. 6 Monate Barrica', year: 2015, volume: 0.75, price: 5.90, category: rotwein, header:header3)
 Product.create!(name: 'PAGO DE SALAMANDER  Reserva ', description: 'Vino de Yema
 Kirschrote Farbe. Feine Intensität der Aromen, dezente Holztöne durch 24 monatige Barriquelagerung.Anfängliche feine  Tanine, die nach entspanntem Dekantieren herrliche Aromen freisetzen: Nelke,Tabak,Kaffee. Gute Struktur. Nachhaltig.  100 % Tempranillo.14,5 vol.%', year: 2013, volume: 0.75, price: 15.90, category: rotwein, header: header1)
 Product.create!(name: 'BARTHEL Tempranillo ', description: 'Seleccion especial de Don Tomaso. Ein idealer Begleiter zu jedem Essen.13 vol.%. 6 Monate Barrica', year: 2015, volume: 0.75, price: 5.90, category: rotwein)
