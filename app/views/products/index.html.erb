@@ -1,13 +1,19 @@
 <div class="container">
   <%= render 'shared/navbar', super_categories: @super_categories %>
 
-  <% if @super_category.present? %>
-    <h1><%= @super_category.name %></h1>
-    <%@categories.each do |category| %>
-     <h2><%= category.name %></h2>
+  <% if @super_category.present?%>
+    <% @categories.each do|category| %>
+     <% if category.products.present? %>
+       <h1><%= category.name %></h1>
+       <%category.headers.each do |header| %>
+           <h2><%= header.name %></h2>
+          <%header.products.each do |product| %>
+          <p><%= product.name %></p>
+       <% end %>
+       <% end %>
+
+
      <% end %>
-       <% @products.each do|product| %>
-   <%= product.name %>
   <% end %>
 
 
