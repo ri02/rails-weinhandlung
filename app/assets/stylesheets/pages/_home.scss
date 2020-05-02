@@ -1,1 +1,31 @@
 // Specific CSS for your home-page
+.home-header{
+  display:flex;
+  justify-content: space-between;
+}
+
+.home-header-name{
+  color: $base-color;
+  text-align:center;
+  min-width: 250px;
+}
+
+@media (max-width: 500px) {
+
+  .home-header-name{
+
+    h1 {
+      font-size: 1.5rem;
+           }
+    h2 {
+      font-size: 1rem;
+    }
+  }
+
+}
+
+.home-main-top-super_categories{
+  display:flex;
+  justify-content: space-between;
+  align-items:center
+}

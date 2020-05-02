@@ -1,0 +1,27 @@
+body{
+  background-color: $light-gray;
+
+}
+
+.container{
+
+  h1 {
+    font-size: $h1-lg
+  }
+
+  h2 {
+    font-size: $h2-lg
+  }
+
+  h3 {
+    font-size: $h3-lg
+  }
+
+  padding: 60px 0px;
+  background-color: $background-color;
+
+  input{
+    border: none;
+    background-color: $background-color}
+
+}
