@@ -3,7 +3,7 @@ body{
 
 }
 
-.container{
+.contain{
 
   h1 {
     font-size: $h1-lg
@@ -17,11 +17,29 @@ body{
     font-size: $h3-lg
   }
 
-  padding: 60px 0px;
+
   background-color: $background-color;
 
   input{
     border: none;
     background-color: $background-color}
 
+
+  display: grid;
+  grid-template-columns: 1fr 12fr 1fr ;
+
+
 }
+
+.side{
+  background-color: $light-gray
+}
+
+@media (max-width: 500px) {
+  .contain{
+    grid-template-columns: 0fr 1fr 0fr ;
+  }
+
+}
+
+
