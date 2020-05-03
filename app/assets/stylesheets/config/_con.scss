@@ -3,7 +3,9 @@ body{
 
 }
 
-.contain{
+.con{
+  height: 100%;
+  border-color:red;
 
   h1 {
     font-size: $h1-lg
@@ -29,6 +31,7 @@ body{
   grid-template-columns: 1fr 12fr 1fr ;
 
 
+
 }
 
 .side{
@@ -36,10 +39,18 @@ body{
 }
 
 @media (max-width: 500px) {
-  .contain{
+  .con{
     grid-template-columns: 0fr 1fr 0fr ;
   }
 
 }
+
+@media (min-width: 1500px) {
+  .con{
+    grid-template-columns: auto 1300px auto ;
+  }
+
+}
+
 
 

@@ -1,24 +1,21 @@
 // Specific CSS for your home-page
 
 .home{
-  padding: 30px 100px;
+  padding: 8% 8%;
   display: flex;
   flex-direction: column;
   justify-content:space-between;
-  height: 100vh;
-}
-.home-main{
-  display: flex;
-  flex-direction: column;
-  justify-content:space-between;
-  height:100%;
-}
+  min-height: 100vh;
+  height: 100%
 
+
+}
 
 .home-header{
-  padding-top: 30px;
+  margin: 5% 0;
   display:flex;
   justify-content: space-between;
+
 }
 
 .home-header-name{
@@ -27,19 +24,18 @@
   min-width: 250px;
 }
 
-.home-main-top{
-  padding-top: 30px
- }
+.home-main{
+ margin: 5% 0;
+}
 
-.home-main-top-image img{
+.home-main-image img{
   width: 100%;
   height: 300px;
   object-fit: cover;
   margin: 10px 0;
 }
 
-
-.home-main-top-super_categories{
+.home-main-super_categories{
   display:flex;
   justify-content: space-between;
   align-items:center;
@@ -47,8 +43,8 @@
   color: $dark-gray;
 }
 
-.home-main-middle{
-
+.home-link{
+  margin: 5% 0 ;
   a{
   text-align:center;
   text-decoration: none;
@@ -57,22 +53,25 @@
   }
 }
 
-.home-main-botton{
-  text-align:center;
-  color:$base-color;
-  margin:10px 0;
+.home-footer{
+  margin: 5% 0 0 0;
 }
 
-.home-footer{
+.home-footer-top{
+  text-align:center;
+  color:$base-color;
+}
+
+.home-footer-bottom{
   display: flex;
   border-top: solid 1px $base-color;
   justify-content: center;
   padding:10px 0;
+
   h3{
     padding: 0px 8px;
   }
 }
-
 
 
 
@@ -82,25 +81,16 @@
   .home{
 
     h1 {
-      font-size: 1.5rem;
+      font-size: 2rem;
            }
     h2 {
-      font-size: 1rem;
+      font-size: 1.5rem;
     }
 
      h3 {
-      font-size: 0.6rem;
+      font-size: 1rem;
     }
   }
-
-
-  .home{
-  padding: 30px 0px;
-  }
-
-  .home-main-top{
-    margin-top: 20px
-   }
 
   .home-main-top-image img{
   width: 100%;
@@ -108,6 +98,11 @@
   object-fit: cover;
   margin: 10px 0;
 }
+
+}
+
+@media (max-height: 500px) {
+
 
 }
 

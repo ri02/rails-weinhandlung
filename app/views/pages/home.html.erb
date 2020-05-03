@@ -1,8 +1,6 @@
-<div class="contain">
-  <div class="side">
-
-  </div>
-  <div class="home container">
+<div class="con">
+  <div class="side"></div>
+  <div class="home ">
     <div class="home-header">
       <div class="home-header-image"></div>
       <div class="home-header-name">
@@ -12,34 +10,31 @@
       <div class="home-header-empty"></div>
     </div>
     <div class="home-main">
-      <div class="home-main-top">
-        <div class="home-main-top-super_categories">
-          <% @super_categories.each do |super_category| %>
-              <h3><%= button_to "#{super_category.name.upcase}", products_path, method: :get, params: {products: {super_category: super_category.name}}, class: "home-main-top-super_categories-item" %></h3>
-          <% end %>
-        </div>
-        <div class="home-main-top-image">
-          <%= image_tag("green")  %>
-        </div>
+      <div class="home-main-super_categories">
+        <% @super_categories.each do |super_category| %>
+            <h3><%= button_to "#{super_category.name.upcase}", products_path, method: :get, params: {products: {super_category: super_category.name}}, class: "home-main-super_categories-item" %></h3>
+        <% end %>
       </div>
-      <div class="home-main-middle">
-         <%= link_to pages_path do%>
-         <h2>ONLINE BESTELLEN</h2>
-         <% end %>
+      <div class="home-main-image">
+        <%= image_tag("green")  %>
       </div>
-      <div class="home-main-botton">
+    </div>
+    <div class="home-link">
+       <%= link_to pages_path do%>
+       <h2>ONLINE BESTELLEN</h2>
+       <% end %>
+    </div>
+    <div class="home-footer">
+      <div class="home-footer-top">
         <h3>Heimhauserstr. 6 | Müncher Freiheit</h3>
         <h3>ÖFFNUNGSZEITEN | Mo-Do 13.30-19 Uhr | Fr 12-13 Uhr & 14.30-19 Uhr | Sa 10.30 -12.30 Uhr</h3>
       </div>
+      <div class="home-footer-bottom">
+        <h3>KONTAKT</h3>
+        <h3>IMPRESSUM</h3>
+        <h3>SERVICE & KONDITIONEN</h3>
+      </div>
     </div>
-    <div class="home-footer">
-      <h3>KONTAKT</h3>
-      <h3>IMPRESSUM</h3>
-      <h3>SERVICE & KONDITIONEN</h3>
-    </div>
-
   </div>
-  <div class="side">
-
-  </div>
+  <div class="side"></div>
 </div>
