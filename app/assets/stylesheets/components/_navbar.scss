@@ -1,6 +1,7 @@
 .nav{
-  background: white;
-  border-bottom: green ;
+  background: $background-color;
+  border-bottom: solid 1px $base-color ;
+  color: $base-color;
 }
 
 .nav-list {
@@ -12,10 +13,20 @@
   height: 60px;
 }
 
+.nav-list-item{
+  margin: 0;
+}
+
+.nav-list-home{
+  margin: 0;
+}
+
 .nav-list-burger {
   display: none;
 
 }
+
+
 
 @media (max-width: 1000px) {
   .nav-list {
@@ -27,11 +38,12 @@
       display: none;
     }
 
+
+
   .nav-list-burger {
   display: block;
-  width: 40px;
-  margin: 0.5em;
-  align: right;
+  width: 1rem;
+  margin: 0;
   }
 
 }
@@ -40,6 +52,7 @@
   display: flex;
   color: $light-gray;
   position: absolute;
+  padding: 10px  0px ;
   top: 0px;
   right: 0px;
   width: 0%;
@@ -48,8 +61,18 @@
   flex-direction: column;
   justify-content:space-between;
   transition: all 1s ease;
+   p {
+    margin:12px;
+   }
 
 }
+
+.sidebar input{
+    border: none;
+    background-color: $base-color;
+    color: $background-color;
+    margin: 12px;
+    padding: 0}
 
 .sidebar.active{
   width: 80%
