@@ -13,18 +13,35 @@
     </div>
 
     <div class="overview-product">
-    <% @super_categories.each do |super_category| %>
-      <h1 class="overview-product-super_category"><%= super_category.name.upcase %></h1>
-      <div class="overview-product-category">
-        <% super_category.categories.each do |category| %>
+      <% @super_categories.each do |super_category| %>
+      <div class="overview-product-category-static">
+        <% super_category.categories.first(4).each do |category| %>
           <h3><%= button_to "#{category.name.upcase}", products_path, method: :get, params: {products: {category: category.name}}, class: "overview-product-category-item" %></h3>
           <% end %>
       </div>
+      <div class="overview-product-super_category">
+        <h1 ><%= super_category.name.upcase %></h1>
+      </div>
+      <div class="overview-product-category-static">
+        <% if super_category.categories.length > 4 %>
+        <% super_category.categories.last(super_category.categories.length-4).each do |category| %>
+          <h3><%= button_to "#{category.name.upcase}", products_path, method: :get, params: {products: {category: category.name}}, class: "overview-product-category-item" %></h3>
+          <% end %>
+        <% end %>
+      </div>
+
       <div class="space">
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
+        <div class="overview-product-category-slider">
+        <% super_category.categories.each do |category| %>
+          <h3><%= button_to "#{category.name.upcase}", products_path, method: :get, params: {products: {category: category.name}}, class: "overview-product-category-item" %></h3>
+          <% end %>
       </div>
+      </div>
+
+
       <% end %>
     </div>
 
