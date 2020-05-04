@@ -1,21 +1,35 @@
 <div class="con">
   <div class="side"></div>
-  <div class="middle ">
+  <div class="middle overview "><%= render 'shared/navbar', super_categories: @super_categories %>
+    <div class="overview-headline">
+      <h1>UNSER SORTIMENT</h1>
+    </div>
 
-    <%= render 'shared/navbar', super_categories: @super_categories %>
-
-    <%= simple_form_for :products, url: products_path, method: "GET", html: { class: 'form-inline' } do |f| %>
-      <%= f.input :query, input_html: {value: ""} %>
-      <%= f.submit "Search", class: "btn btn-primary" %>
-    <% end %>
-
-
-    <% @super_categories.each do |super_category| %>
-      <h1><%= super_category.name %></h1>
-      <% super_category.categories.each do |category| %>
-        <%= button_to "#{category.name}", products_path, method: :get, params: {products: {category: category.name}}, class: "" %>
-        <% end %>
+    <div class="overview-search">
+      <%= simple_form_for :products, url: products_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+        <%= f.input :query, input_html: {value: ""} %>
+        <%= f.submit "SUCHEN", class: "btn btn-primary" %>
       <% end %>
+    </div>
+
+    <div class="overview-product">
+    <% @super_categories.each do |super_category| %>
+      <h1 class="overview-product-super_category"><%= super_category.name.upcase %></h1>
+      <div class="overview-product-category">
+        <% super_category.categories.each do |category| %>
+          <h3><%= button_to "#{category.name.upcase}", products_path, method: :get, params: {products: {category: category.name}}, class: "overview-product-category-item" %></h3>
+          <% end %>
+      </div>
+      <div class="space">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <% end %>
+    </div>
+
+
+
   </div>
   <div class="side"></div>
 </div>
