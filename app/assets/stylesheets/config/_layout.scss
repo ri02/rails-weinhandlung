@@ -33,6 +33,11 @@ body{
     font-size: $h3-lg
   }
 
+  h4 {
+    font-size: $h4-lg;
+    margin: 0
+  }
+
 
   background-color: $background-color;
 
@@ -55,6 +60,7 @@ body{
 .middle{
     min-height: 100vh;
     padding:0 8% 8% 8%;
+
 }
 
 //media-queries

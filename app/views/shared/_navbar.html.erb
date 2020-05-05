@@ -1,12 +1,12 @@
 <div class="nav">
  <div class= "nav-list">
   <%= link_to root_path do %>
-  <h3 class="nav-list-home">HOME</h3>
+  <h4 class="nav-list-home">HOME</h4>
   <% end %>
   <% super_categories.each do |super_category| %>
-    <h3> <%= button_to "#{super_category.name.upcase}", products_path, method: :get, params: {products: {super_category: super_category.name}}, class: "nav-list-item" %></h3>
+    <h4> <%= button_to "#{super_category.name.upcase}", products_path, method: :get, params: {products: {super_category: super_category.name}}, class: "nav-list-item" %></h4>
   <% end %>
-  <h3 class="nav-list-item">WARENKORB</h3>
+  <h4 class="nav-list-item">WARENKORB</h4>
   <span class="nav-list-burger"><i id="burger-icon" class="fas fa-bars"></i></span>
  </div>
 </div>
@@ -15,11 +15,11 @@
   <div class="sidebar-grey"></div>
   <div class="sidebar">
     <div class= "sidebar-list">
-     <h3 class="sidebar-list-home">HOME <i id="arrow-icon" class="fas fa-chevron-right"></i></h3>
+     <h4 class="sidebar-list-home">HOME <i id="arrow-icon" class="fas fa-chevron-right"></i></h4>
      <% super_categories.each do |super_category| %>
        <%= button_to "#{super_category.name.upcase}", products_path, method: :get, params: {products: {super_category: super_category.name}}, class: "sidebar-list-item" %>
      <% end %>
-     <h3 class="sidebar-list-item">WARENKORB</h3>
+     <h4 class="sidebar-list-item">WARENKORB</h4>
     </div>
     <div class="sidebar-footer">
 

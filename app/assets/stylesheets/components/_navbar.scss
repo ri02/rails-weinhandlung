@@ -2,6 +2,10 @@
   background: $background-color;
   border-bottom: solid 1px $base-color ;
   color: $base-color;
+  position: sticky;
+  width:100%;
+  top:0;
+  z-index: 100;
 }
 
 .nav-list {
@@ -12,7 +16,7 @@
   margin: 1rem 0;
 }
 
-.nav-list-item h3{
+.nav-list-item h4{
   margin: 0;
 }
 
@@ -67,6 +71,8 @@
   flex-direction: column;
   justify-content:space-between;
   transition: all 1s ease;
+  z-index: 200;
+
    p {
     margin:12px;
    }
@@ -81,7 +87,9 @@
     padding: 0}
 
 .sidebar.active{
-  width: 80%
+  width: 80%;
+  position: fixed;
+  top:0;
 
 }
 
@@ -97,11 +105,14 @@
   display:none;
   height: 100vh;
   background-color: #4e4e4e91;
+  z-index: 200;
 }
 
 
 .sidebar-grey.active{
-  display: block
+  display: block;
+  position: fixed;
+  top:0;
 }
 
 .sidebar-list {
