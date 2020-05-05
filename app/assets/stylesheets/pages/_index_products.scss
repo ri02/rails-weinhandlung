@@ -31,13 +31,33 @@
     margin-right: 8px;
 
   }
+  form{
+    width:100%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-  .btn{
+  #btn-search{
     background-color: $base-color;
     color: $background-color;
     border-radius: 1px;
+    width:100px;
+    height:calc(1.5em + 0.75rem + 2px)
   }
-}
+
+  .form-group{
+    width:60%;
+
+    #products_query{
+      width:100%;
+
+    }
+
+    }
+  }
+
+
 
 
 

@@ -6,9 +6,9 @@
     </div>
 
     <div class="overview-search">
-      <%= simple_form_for :products, url: products_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+      <%= simple_form_for :products, url: products_path, method: "GET" do |f| %>
         <%= f.input :query, input_html: {value: ""} %>
-        <%= f.submit "SUCHEN", class: "btn btn-primary" %>
+        <%= f.submit "SUCHEN", class: "btn btn-primary" , id:'btn-search'%>
       <% end %>
     </div>
 
