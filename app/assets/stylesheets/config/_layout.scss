@@ -1,5 +1,18 @@
 body{
   background-color: $light-gray;
+  a {
+    text-decoration: none;
+    color: $base-color;
+  }
+
+  a:hover{
+    color: $dark-gray;
+    text-decoration: none;
+  }
+
+  form{
+    font-family: $headers-font
+  }
 
 }
 

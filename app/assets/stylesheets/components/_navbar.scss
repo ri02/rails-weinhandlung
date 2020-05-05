@@ -12,12 +12,19 @@
   margin: 1rem 0;
 }
 
-.nav-list-item{
+.nav-list-item h3{
   margin: 0;
 }
 
 .nav-list-home{
-  margin: 0;
+  h3{
+    margin: 0;
+  }
+
+  a {
+    color:$base-color;
+  }
+
 }
 
 .nav-list-burger {
