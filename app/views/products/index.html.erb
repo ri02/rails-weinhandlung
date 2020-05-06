@@ -1,17 +1,27 @@
 <div class="con">
   <div class="side"></div>
   <div class="middle"><%= render 'shared/navbar', super_categories: @super_categories %>
-   <% if @search.present? %> <!-- until pg:multisearchable inculded -->
+    <% if @search.present? %> <!-- until pg:multisearchable inculded -->
+      <%@products.each do |product| %>
+        <p><%= product.name %></p>
+      <% end %>
 
-    <%@products.each do |product| %>
-      <p><%= product.name %></p>
-    <% end %>
 
-   <% else %>
+    <% elsif @categories[0].super_category.name == 'Wein' %>
+        <div class="super_category-name">
+          <h1><%= @categories[0].super_category.name.upcase%></h1>
+        </div>
+        <% @categories.each do|category| %>
+          <% if category.products.present? %>
+            <div class="category-name">
+              <h2 ><%= category.name.upcase %></h2>
+            </div>
+          <% end %>
+        <% end %>
 
-      <div class="super_category-name">
-        <h1><%= @categories[0].super_category.name.upcase%></h1>
-      </div>
+
+
+    <% else %>
       <% @categories.each do|category| %>
         <% if category.products.present? %>
           <div class="category-name">
@@ -30,8 +40,7 @@
             <% end %>
           <% end %>
         <% end %>
-      <% end %>
-
+      <%end %>
     <% end %>
 
 

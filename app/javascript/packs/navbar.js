@@ -23,4 +23,28 @@ arrow.addEventListener('click', hideSidebar)
 
 }
 
-export {toggleSidebar};
+
+const toggleMenu = () => {
+
+  const dropdownTop = Array.from(document.querySelectorAll('.nav-dropdown'))
+  const dropdownBottom = Array.from(document.querySelectorAll('.nav-dropdown-bottom'))
+  dropdownBottom.forEach( (item) => item.classList.remove('active'))
+
+  const toggleMenuItem = (e) => {
+    const active = e.currentTarget.querySelector(".active")
+
+    if (active===null){
+      console.log('test')
+    const dropdownBottom = Array.from(document.querySelectorAll('.nav-dropdown-bottom'))
+    dropdownBottom.forEach( (item) => item.classList.remove('active'))
+    }
+
+    const dropdownBox = e.currentTarget.querySelector(".nav-dropdown-bottom")
+    dropdownBox.classList.toggle("active")
+  }
+
+dropdownTop.forEach( (item) => item.addEventListener('click', toggleMenuItem))
+
+}
+
+export {toggleSidebar, toggleMenu};

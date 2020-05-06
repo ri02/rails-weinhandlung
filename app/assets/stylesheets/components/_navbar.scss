@@ -143,3 +143,34 @@
   margin: 30px;
   height: 20%;
 }
+
+.nav-dropdown{
+  display: flex;
+  flex-direction: column;
+  transition: all 5s ease;
+  position: relative;
+}
+
+.nav-dropdown-bottom {
+  position: absolute;
+  top: 0em;
+  z-index: 400;
+  background-color: $background-color;
+  display: none;
+  transition: all 5s ease;
+  input{
+    padding-right: 0;
+    padding-left: 0;
+
+  }
+}
+
+.nav-dropdown-bottom.active {
+  display: block;
+  top: 2.1em;
+
+}
+
+.nav-dropdown-bottom-item{
+  margin-top: 0.5em
+}

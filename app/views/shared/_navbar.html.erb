@@ -3,8 +3,19 @@
   <%= link_to root_path do %>
   <h4 class="nav-list-home">HOME</h4>
   <% end %>
+
   <% super_categories.each do |super_category| %>
-    <h4> <%= button_to "#{super_category.name.upcase}", products_path, method: :get, params: {products: {super_category: super_category.name}}, class: "nav-list-item" %></h4>
+    <div class="nav-dropdown">
+      <div class="nav-dropdown-top">
+        <h4 class= "nav-list-item nav-dropdown-top-item"> <%=super_category.name.upcase%></h4>
+      </div>
+      <div class="nav-dropdown-bottom">
+        <h4> <%= button_to "#{super_category.name.upcase} ÜBERSICHT", products_path, method: :get, params: {products: {super_category: super_category.name}}, class: "nav-list-item nav-dropdown-bottom-item" %></h4>
+        <% super_category.categories.each do |category| %>
+          <h4> <%= button_to "#{category.name.upcase}", products_path, method: :get, params: {products: {category: category.name}}, class: "nav-list-item nav-dropdown-bottom-item" %></h4>
+        <% end %>
+      </div>
+    </div>
   <% end %>
   <h4 class="nav-list-item">WARENKORB</h4>
   <span class="nav-list-burger"><i id="burger-icon" class="fas fa-bars"></i></span>
