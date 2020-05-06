@@ -7,10 +7,8 @@
       <% end %>
 
 
+<!--   here come the possibility to choose between wine regions -->
     <% elsif @categories[0].super_category.name == 'Wein' %>
-        <div class="super_category-name">
-          <h1><%= @categories[0].super_category.name.upcase%></h1>
-        </div>
         <% @categories.each do|category| %>
           <% if category.products.present? %>
             <div class="category-name">
@@ -20,7 +18,7 @@
         <% end %>
 
 
-
+<!--  non wine products -->
     <% else %>
       <% @categories.each do|category| %>
         <% if category.products.present? %>
