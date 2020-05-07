@@ -31,8 +31,18 @@
               <div class="card-product">
                 <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
                 <div class="card-product-infos">
-                  <h3><%= product.name %></h3>
-                  <p><%= product.description %></p>
+                  <div class="card-product-infos-top">
+                    <h3><%= product.name %></h3>
+                    <p><%= product.year %></p>
+                  </div>
+                  <div class="card-product-infos-middle">
+                    <p><%= product.description %></p>
+                  </div>
+                  <div class="card-product-infos-bottom">
+                    <p><%= product.volume %></p>
+                    <p><%= product.price%>€</p>
+                  </div>
+
                 </div>
               </div>
             <% end %>

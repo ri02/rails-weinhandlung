@@ -154,23 +154,32 @@
 .nav-dropdown-bottom {
   position: absolute;
   top: 0em;
+  left: -8px;
   z-index: 400;
-  background-color: $background-color;
   display: none;
   transition: all 5s ease;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   input{
-    padding-right: 0;
-    padding-left: 0;
-
+    padding:8px;
+    color: $base-color;
   }
 }
 
 .nav-dropdown-bottom.active {
   display: block;
   top: 2.1em;
+  background-color: $background-color;
+
 
 }
 
-.nav-dropdown-bottom-item{
-  margin-top: 0.5em
+.nav-dropdown-bottom-item {
+  margin-top: 0.5em;
+
 }
+
+.nav-dropdown-bottom-item:hover {
+  transform: scale(1.1)
+}
+
+
