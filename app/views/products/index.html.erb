@@ -1,6 +1,7 @@
 <div class="con">
   <div class="side"></div>
-  <div class="middle"><%= render 'shared/navbar', super_categories: @super_categories %>
+  <div class="middle">
+    <%= render 'shared/navbar', super_categories: @super_categories %>
     <% if @search.present? %> <!-- until pg:multisearchable inculded -->
       <%@products.each do |product| %>
         <p><%= product.name %></p>
