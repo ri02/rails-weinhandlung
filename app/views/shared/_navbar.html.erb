@@ -25,15 +25,23 @@
 <div class="sidebar-box">
   <div class="sidebar-grey"></div>
   <div class="sidebar">
-    <div class= "sidebar-list">
-     <h4 class="sidebar-list-home">HOME <i id="arrow-icon" class="fas fa-chevron-right"></i></h4>
+    <div class= "sidebar-list ">
+     <h4 class="sidebar-list-home sidebar-list-item">HOME <i id="arrow-icon" class="fas fa-chevron-right"></i></h4>
      <% super_categories.each do |super_category| %>
-       <%= button_to "#{super_category.name.upcase}", products_path, method: :get, params: {products: {super_category: super_category.name}}, class: "sidebar-list-item" %>
+       <h4> <%= button_to "#{super_category.name.upcase}", products_path, method: :get, params: {products: {super_category: super_category.name}}, class: "sidebar-list-item" %></h4>
      <% end %>
      <h4 class="sidebar-list-item">WARENKORB</h4>
     </div>
     <div class="sidebar-footer">
-
+     <div class="sidebar-footer-top">
+       <h3>Heimhauserstr. 6 | Müncher Freiheit</h3>
+       <h3>ÖFFNUNGSZEITEN | Mo-Do 13.30-19 Uhr | Fr 12-13 Uhr & 14.30-19 Uhr | Sa 10.30 -12.30 Uhr</h3>
+     </div>
+     <div class="sidebar-footer-bottom">
+       <h3>KONTAKT</h3>
+       <h3>IMPRESSUM</h3>
+       <h3>SERVICE & KONDITIONEN</h3>
+     </div>
     </div>
   </div>
 
