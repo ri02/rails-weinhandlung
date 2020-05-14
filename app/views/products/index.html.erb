@@ -2,55 +2,84 @@
   <div class="side"></div>
   <div class="middle">
     <%= render 'shared/navbar', super_categories: @super_categories %>
-    <% if @search.present? %> <!-- until pg:multisearchable inculded -->
-      <%@products.each do |product| %>
-        <p><%= product.name %></p>
-      <% end %>
 
 
-<!--   here come the possibility to choose between wine regions -->
-    <% elsif @categories[0].super_category.name == 'Wein' %>
-        <% @categories.each do|category| %>
-          <% if category.products.present? %>
-            <div class="category-name">
-              <h2 ><%= category.name.upcase %></h2>
-            </div>
-          <% end %>
-        <% end %>
-
-
-<!--  non wine products -->
-    <% else %>
       <% @categories.each do|category| %>
         <% if category.products.present? %>
           <div class="category-name">
             <h2 ><%= category.name.upcase %></h2>
           </div>
-          <%category.headers.uniq.each do |header| %>
-            <h3 class="header-name"><%= header.name.upcase %></h3>
-            <%header.products.each do |product| %>
-              <div class="card-product">
-                <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-                <div class="card-product-infos">
-                  <div class="card-product-infos-top">
-                    <h3><%= product.name %></h3>
-                    <p><%= product.year %></p>
-                  </div>
-                  <div class="card-product-infos-middle">
-                    <p><%= product.description %></p>
-                  </div>
-                  <div class="card-product-infos-bottom">
-                    <p><%= product.volume %></p>
-                    <p><%= product.price%>€</p>
-                  </div>
 
-                </div>
+          <% if category.super_category.name == 'Weine' %>
+            <div class="country-selection">
+              <%category.countries.uniq.each do |country| %>
+                <h3 class="country-selection-button" ><%= country.name.upcase %></h3>
+              <% end %>
+            </div>
+
+            <%category.countries.uniq.each do |country| %>
+              <div class="country-wines">
+                <h3 class="country-name"><%= country.name.upcase %></h3>
+                <%country.headers.uniq.each do |header| %>
+                  <h3 class="header-name"><%= header.name.upcase %></h3>
+                  <%header.products.each do |product| %>
+
+                    <div class="card-product">
+                      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+                      <div class="card-product-infos">
+                        <div class="card-product-infos-top">
+                          <h3><%= product.name %></h3>
+                          <p><%= product.year %></p>
+                        </div>
+                        <div class="card-product-infos-middle">
+                          <p><%= product.description %></p>
+                        </div>
+                        <div class="card-product-infos-bottom">
+                          <p><%= product.volume %></p>
+                          <p><%= product.price%>€</p>
+                        </div>
+                      </div>
+                    </div>
+
+                  <% end %>
+                <% end %>
+
               </div>
+
+            <% end %>
+            <% else %>
+              <%category.headers.uniq.each do |header| %>
+                <h3 class="header-name"><%= header.name.upcase %></h3>
+                <%header.products.each do |product| %>
+
+                  <div class="card-product">
+                    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+                    <div class="card-product-infos">
+                      <div class="card-product-infos-top">
+                        <h3><%= product.name %></h3>
+                        <p><%= product.year %></p>
+                      </div>
+                      <div class="card-product-infos-middle">
+                        <p><%= product.description %></p>
+                      </div>
+                      <div class="card-product-infos-bottom">
+                        <p><%= product.volume %></p>
+                        <p><%= product.price%>€</p>
+                      </div>
+
+                    </div>
+                  </div>
+                <% end %>
+              <% end %>
             <% end %>
           <% end %>
-        <% end %>
+
+
+
+
+
       <%end %>
-    <% end %>
+
 
 
   </div>
