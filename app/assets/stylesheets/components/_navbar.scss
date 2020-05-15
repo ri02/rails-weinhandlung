@@ -33,9 +33,8 @@
 
 }
 
-.sidebar {
-  width: 0%;
-  display: none;
+.sidebar.active {
+  transform: translateX(0)
 }
 
 .sidebar.active input{
@@ -46,25 +45,24 @@
     margin: 10px;
   }
 
-.sidebar.active{
-  width: 80%;
-  position: fixed;
-  top:0;
+.sidebar{
+  width: 100%;
+  overflow: auto;
   display: flex;
-  color: $light-gray;
-  padding: 10px  0px ;
-  right: 0px;
-  height: 100vh;
-  background: $base-color;
-  flex-direction: column;
-  justify-content:space-between;
-  transition: all 1s ease;
   z-index: 200;
-
-   p {
-    margin:12px;
-   }
-
+  justify-content: space-between;
+ flex-direction: column;
+ flex: none;
+ position: fixed;
+ top: 0px;
+ right: 0;
+ height: 100vh;
+ width: 70%;
+ padding: 48px 60px;
+ background-color: $base-color;
+ color: #fff;
+ transform: translateX(100%);
+ transition: transform .262s ease-out;
 }
 
 .sidebar-box{
@@ -89,12 +87,24 @@
   top:0;
 }
 
-.sidebar-list {
+
+
+.sidebar .sidebar-list {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.sidebar.active .sidebar-list {
   width: 100%;
   display: flex;
   flex-direction: column;
   height: 80%;
   overflow: hidden;
+  opacity: 1;
+  visibility: visible;
+  transform: translate3d(0,0,0);
+  transition: opacity 350ms,transform 350ms ease-out;
+  transition-delay: .262s,.262s;
 }
 
 .sidebar-list-home {
