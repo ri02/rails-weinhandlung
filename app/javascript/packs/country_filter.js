@@ -9,9 +9,7 @@ const toggleCountry = (e) => {
   const allCountries= Array.from(document.querySelectorAll('.country-wines'));
   allCountries.forEach( (country) => {
     let countryName = country.querySelector('.country-name').innerHTML;
-    console.log(countryName)
     if (countryName == selectedCountry) {
-      console.log(country)
       country.classList.toggle("active")
     }
   })

@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content:space-between;
   height: 100%;
+
 }
 
 .overview-product{
@@ -63,10 +64,10 @@
 
 
 .overview-product-super_category{
-  background-color: $base-color;
+  background-image: url('green-background.png');
   text-align:center ;
   padding: 3%;
-  border:double 5px #ababab;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
    input{
     text-align:center ;
     color: #dab800;;
