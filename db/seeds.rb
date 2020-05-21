@@ -40,7 +40,7 @@ Category.create!(name: 'Barthel Premium Kaffee', super_category: kaffee)
 
 
 frankreich = Country.create!(name: 'Frankreich')
-italien = Country.create!(name: 'Italien')
+italien = Country.create!(name: 'Italien', icon: 'paris.svg')
 
 header1 = Header.create!(name: 'Aweseome header')
 header2 = Header.create!(name: 'Adalusia ')
