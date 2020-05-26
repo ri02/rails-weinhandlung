@@ -47,6 +47,7 @@
                         <div class="card-product-infos-bottom">
                           <p><%= product.volume %></p>
                           <p><%= product.price%>€</p>
+                          <%= button_to "Hinzufügen", line_items_path(:product_id => product.id) %>
                         </div>
                       </div>
                     </div>
@@ -75,6 +76,7 @@
                       <div class="card-product-infos-bottom">
                         <p><%= product.volume %></p>
                         <p><%= product.price%>€</p>
+                        <%= button_to "Hinzufügen", line_items_path(:product_id => product.id) %>
                       </div>
 
                     </div>

@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts' Erstelle Seeds'
 
+
+LineItem.destroy_all
 Product.destroy_all
 Header.destroy_all
 Country.destroy_all
