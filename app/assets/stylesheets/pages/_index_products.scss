@@ -23,18 +23,5 @@
   display: block
 }
 
-.country-selection{
-  display: flex;
-  flex-wrap: wrap;
 
-}
-
-.country-selection-button{
-  margin: 3%;
-  border: solid 1px $base-color
-}
-
-.country-selection-button.active{
-  background-color: $base-color;
-}
 

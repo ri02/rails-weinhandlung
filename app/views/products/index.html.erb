@@ -13,11 +13,11 @@
           <% if category.super_category.name == 'Weine' %>
             <div class="country-selection">
               <%category.countries.uniq.each do |country| %>
-                <div class="county-selection-card">
-                  <% if country.icon.present?  %>
-                  <%= image_tag country.icon %>
+                <div class="country-selection-card">
+                  <% if country.photo.attached?  %>
+                  <%= cl_image_tag country.photo.key, height: 60, width: 60, crop: :fill %>
                   <% end %>
-                  <h3 class="country-selection-button" ><%= country.name.upcase %></h3>
+                  <h4 class="country-selection-button" ><%= country.name.upcase %></h4>
                 </div>
 
               <% end %>
@@ -29,32 +29,9 @@
                 <%country.headers.uniq.each do |header| %>
                   <h3 class="header-name"><%= header.name.upcase %></h3>
                   <%header.products.each do |product| %>
-
-                    <div class="card-product">
-                      <% if product.photo.attached?  %>
-                        <%= cl_image_tag product.photo.key, height: 300, width: 400, crop: :fill %>
-                      <% else %>
-                        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-                      <% end %>
-                      <div class="card-product-infos">
-                        <div class="card-product-infos-top">
-                          <h3><%= product.name %></h3>
-                          <p><%= product.year %></p>
-                        </div>
-                        <div class="card-product-infos-middle">
-                          <p><%= product.description %></p>
-                        </div>
-                        <div class="card-product-infos-bottom">
-                          <p><%= product.volume %></p>
-                          <p><%= humanized_money_with_symbol(product.price)%></p>
-                          <%= button_to "Hinzufügen", line_items_path(:product_id => product.id) %>
-                        </div>
-                      </div>
-                    </div>
-
+                    <%= render 'shared/product-card', product: product %>
                   <% end %>
                 <% end %>
-
               </div>
 
             <% end %>
@@ -62,37 +39,13 @@
               <%category.headers.uniq.each do |header| %>
                 <h3 class="header-name"><%= header.name.upcase %></h3>
                 <%header.products.each do |product| %>
-
-                  <div class="card-product">
-                    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-                    <div class="card-product-infos">
-                      <div class="card-product-infos-top">
-                        <h3><%= product.name %></h3>
-                        <p><%= product.year %></p>
-                      </div>
-                      <div class="card-product-infos-middle">
-                        <p><%= product.description %></p>
-                      </div>
-                      <div class="card-product-infos-bottom">
-                        <p><%= product.volume %></p>
-                        <p><%= humanized_money_with_symbol(product.price)%></p>
-                        <%= button_to "Hinzufügen", line_items_path(:product_id => product.id) %>
-                      </div>
-
-                    </div>
-                  </div>
+                  <%= render 'shared/product-card', product: product %>
                 <% end %>
               <% end %>
             <% end %>
           <% end %>
 
-
-
-
-
       <%end %>
-
-
 
   </div>
   <div class="side"></div>

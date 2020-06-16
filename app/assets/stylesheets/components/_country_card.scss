@@ -1,0 +1,35 @@
+.country-selection {
+  display: flex;
+  align-items: center;
+
+}
+
+.country-selection-card {
+  display: flex;
+  min-width: 100px;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  border: solid 1px $base-color;
+  margin: 2% 2%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 3px;
+  background-color: white;
+}
+
+.country-selection-card img {
+  height: 60px;
+  width: 60 px;
+  object-fit: cover;
+}
+
+
+.country-selection-button{
+  margin: 3%;
+  text-align:center;
+  padding: 3px
+}
+
+.country-selection-card.active{
+  background-color: #007a5347;
+}
