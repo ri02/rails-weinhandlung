@@ -10,8 +10,7 @@
         <h4 class= "nav-list-item nav-dropdown-top-item"> <%=super_category.name.upcase%></h4>
       </div>
       <div class="nav-dropdown-bottom">
-        <h4> <%= button_to "#{super_category.name.upcase} ÜBERSICHT", products_path, method: :get, params: {products: {super_category: super_category.name}}, class: "nav-list-item nav-dropdown-bottom-item" %></h4>
-        <% super_category.categories.each do |category| %>
+          <% super_category.categories.each do |category| %>
           <h4> <%= button_to "#{category.name.upcase}", products_path, method: :get, params: {products: {category: category.name}}, class: "nav-list-item nav-dropdown-bottom-item" %></h4>
         <% end %>
       </div>

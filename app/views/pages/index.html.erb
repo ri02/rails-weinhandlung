@@ -20,7 +20,7 @@
           <% end %>
       </div>
       <div class="overview-product-super_category">
-        <h1><%= button_to "#{super_category.name.upcase}", products_path, method: :get, params: {products: {super_category: super_category.name}}, class: "overview-product-super_category-item" %></h1>
+        <h1 class= "overview-product-super_category-item"><%=super_category.name %></h1>
       </div>
       <div class="overview-product-category-static">
         <% if super_category.categories.length > 4 %>

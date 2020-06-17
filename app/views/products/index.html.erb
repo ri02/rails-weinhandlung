@@ -3,6 +3,13 @@
   <div class="middle">
     <%= render 'shared/navbar', super_categories: @super_categories %>
 
+    <% if @category_overview.present? %>
+      <% @category_overview.each do |category| %>
+        <h3><%= button_to "#{category.name.upcase}", products_path, method: :get, params: {products: {category: category.name}}, class: "interim-navigation" %></h3>
+      <% end %>
+
+    <% else %>
+
 
       <% @categories.each do|category| %>
         <% if category.products.present? %>
@@ -48,6 +55,8 @@
           <% end %>
 
       <%end %>
+
+    <% end %>
 
   </div>
   <div class="side"></div>
