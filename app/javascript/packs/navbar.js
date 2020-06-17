@@ -1,26 +1,27 @@
 const toggleSidebar = () =>{
 
-const burger = document.getElementById('burger-icon')
-const arrow = document.getElementById('arrow-icon')
+  const burger = document.getElementById('burger-icon')
+  const arrow = document.getElementById('arrow-icon')
 
-const showSidebar = () => {
-  const sidebar = document.querySelector('.sidebar')
-  const sidebar_grey = document.querySelector('.sidebar-grey')
-  sidebar.classList.add("active")
-  sidebar_grey.classList.add("active")
-}
+  const showSidebar = () => {
+    const sidebar = document.querySelector('.sidebar')
+    const sidebar_grey = document.querySelector('.sidebar-grey')
+    sidebar.classList.add("active")
+    sidebar_grey.classList.add("active")
+  }
 
-const hideSidebar = () => {
-  const sidebar = document.querySelector('.sidebar')
-  const sidebar_grey = document.querySelector('.sidebar-grey')
-  sidebar.classList.remove("active")
-  sidebar_grey.classList.remove("active")
+  const hideSidebar = () => {
+    const sidebar = document.querySelector('.sidebar')
+    const sidebar_grey = document.querySelector('.sidebar-grey')
+    sidebar.classList.remove("active")
+    sidebar_grey.classList.remove("active")
 
-}
+  }
 
-burger.addEventListener('click', showSidebar)
-arrow.addEventListener('click', hideSidebar)
-
+  if (burger) {
+  burger.addEventListener('click', showSidebar)
+  arrow.addEventListener('click', hideSidebar)
+  }
 }
 
 
@@ -50,9 +51,10 @@ const toggleMenu = () => {
       return};
    }
 
-
-  document.addEventListener('click', removeMenu)
-  dropdownTop.forEach(item => item.addEventListener('click', toggleMenuItem))
+  if (dropdownTop){
+    document.addEventListener('click', removeMenu)
+    dropdownTop.forEach(item => item.addEventListener('click', toggleMenuItem))
+  }
 
 }
 
