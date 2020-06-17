@@ -51,6 +51,8 @@ header4 = Header.create!(name: '
 Bayrischer Feinbrand vom Fritznhof / Chiemgau - Dirnsberg')
 
 Product.create!(name: 'BARTHEL 1 ', description: 'Seleccion especial de Don Tomaso. Ein idealer Begleiter zu jedem Essen.13 vol.%. 6 Monate Barrica', year: 2015, volume: 0.75, price_cents: 5.90, category: rotwein, header:header1, country: italien)
+Product.create!(name: 'BARTHEL 1 ', description: 'Seleccion especial de Don Tomaso. Ein idealer Begleiter zu jedem Essen.13 vol.%. 6 Monate Barrica', year: 2015, volume: 0.75, price_cents: 5.90, category: weißwein, header:header1, country: italien)
+Product.create!(name: 'BARTHEL 1 ', description: 'Seleccion especial de Don Tomaso. Ein idealer Begleiter zu jedem Essen.13 vol.%. 6 Monate Barrica', year: 2015, volume: 0.75, price_cents: 5.90, category: weißwein, header:header1, country: italien)
 Product.create!(name: 'BARTHEL 2 ', description: 'Seleccion especial de Don Tomaso. Ein idealer Begleiter zu jedem Essen.13 vol.%. 6 Monate Barrica', year: 2015, volume: 0.75, price_cents: 5.90, category: rotwein, header:header2, country: italien)
 Product.create!(name: 'BARTHEL 3 ', description: 'Seleccion especial de Don Tomaso. Ein idealer Begleiter zu jedem Essen.13 vol.%. 6 Monate Barrica', year: 2015, volume: 0.75, price_cents: 5.90, category: rotwein, header:header3, country: italien)
 Product.create!(name: 'PAGO DE SALAMANDER  Reserva ', description: 'Vino de Yema
