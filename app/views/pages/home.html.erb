@@ -4,15 +4,20 @@
     <div class="home-header">
       <div class="home-header-image"></div>
       <div class="home-header-name">
-        <h1>BARTHEL & SOHN</h1>
-        <h2>WEIHNFACHHANDEL MÜNCHEN SCHWABING</h2>
+        <h1><%=@administration.name.upcase%></h1>
+        <h2><%=@administration.subtitle.upcase%></h2>
       </div>
       <div class="home-header-empty"></div>
+    </div>
+    <div class="home-top">
+      <h3><%=@administration.street_name%></h3>
+      <h3> <%=@administration.opening_time%></h3>
+      <h3>Tel:<%=@administration.telephone_number%> | <%=@administration.email%></h3>
     </div>
     <div class="home-main">
       <div class="home-main-super_categories">
         <% @super_categories.each do |super_category| %>
-            <h3><%= button_to "#{super_category.name.upcase}", products_path, method: :get, params: {products: {super_category: super_category.name}}, class: "home-main-super_categories-item" %></h3>
+          <h3><%= button_to "#{super_category.name.upcase}", products_path, method: :get, params: {products: {super_category: super_category.name}}, class: "home-main-super_categories-item" %></h3>
         <% end %>
       </div>
       <div class="home-main-image">
@@ -20,15 +25,14 @@
       </div>
     </div>
     <div class="home-link">
+      <%if @administration.infobox.present? %>
+       <h3><%= @administration.infobox%></h3>
+      <% end %>
        <%= link_to pages_path do%>
        <h2>ONLINE BESTELLEN</h2>
        <% end %>
     </div>
     <div class="home-footer">
-      <div class="home-footer-top">
-        <h3>Heimhäuserstr. 6 | Müncher Freiheit</h3>
-        <h3>ÖFFNUNGSZEITEN | Mo-Do 13.30-19 Uhr | Fr 12-13 Uhr & 14.30-19 Uhr | Sa 10.30 -12.30 Uhr</h3>
-      </div>
       <div class="home-footer-bottom">
         <h3>KONTAKT</h3>
         <h3>IMPRESSUM</h3>

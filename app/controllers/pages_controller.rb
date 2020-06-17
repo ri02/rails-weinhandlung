@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 
   def home
     @super_categories = SuperCategory.all
-    @administration = Administration.all
+    @administration = Administration.first
 
   end
 

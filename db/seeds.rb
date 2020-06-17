@@ -14,6 +14,10 @@ Header.destroy_all   if Rails.env.development?
 Country.destroy_all  if Rails.env.development?
 Category.destroy_all if Rails.env.development?
 SuperCategory.destroy_all if Rails.env.development?
+Administration.destroy_all if Rails.env.development?
+
+Administration.create!(name:'Barthel & Sohn', subtitle:'WEIHNFACHHANDEL MÜNCHEN SCHWABING',street_name: 'Heimhäuserstr. 6 | Müncher Freiheit', street_number: 6, postal_code: '80802',opening_time:'ÖFFNUNGSZEITEN | Mo-Do 13.30-19 Uhr | Fr 12-13 Uhr & 14.30-19 Uhr | Sa 10.30 -12.30 Uhr', city: 'München', email:'wein@barthelwein.de' , telephone_number: ' 0892537353325252')
+
 
 
 wein = SuperCategory.create!(name: 'Weine')
