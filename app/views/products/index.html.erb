@@ -11,15 +11,15 @@
     <% else %>
 
 
-      <% @categories.each do|category| %>
-        <% if category.products.present? %>
+
+        <% if @category.products.present? %>
           <div class="category-name">
-            <h2 ><%= category.name.upcase %></h2>
+            <h2 ><%= @category.name.upcase %></h2>
           </div>
 
-          <% if category.super_category.name == 'Weine' %>
+          <% if @category.super_category.name == 'Weine' %>
             <div class="country-selection">
-              <%category.countries.uniq.each do |country| %>
+              <%@category.countries.uniq.each do |country| %>
                 <div class="country-selection-card">
                   <% if country.photo.attached?  %>
                     <%= cl_image_tag country.photo.key, height: 60, width: 60, crop: :fill %>
@@ -32,20 +32,24 @@
               <% end %>
             </div>
 
-            <%category.countries.uniq.each do |country| %>
+            <%@category.countries.uniq.each do |country| %>
               <div class="country-wines">
                 <h3 class="country-name"><%= country.name.upcase %></h3>
-                <%country.headers.uniq.each do |header| %>
-                  <h3 class="header-name"><%= header.name.upcase %></h3>
-                  <%header.products.each do |product| %>
-                    <%= render 'shared/product-card', product: product %>
+                <% @category.headers.uniq.each do |header| %>
+                  <% if  header.countries.include?(country) %>
+                    <h3 class="header-name"><%= header.name.upcase %></h3>
+                  <% end %>
+                  <%@category.products.each do |product| %>
+                      <% if product.country == country && product.header == header%>
+                        <%= render 'shared/product-card', product: product %>
+                      <%end %>
                   <% end %>
                 <% end %>
               </div>
 
             <% end %>
             <% else %>
-              <%category.headers.uniq.each do |header| %>
+              <%@category.headers.uniq.each do |header| %>
                 <h3 class="header-name"><%= header.name.upcase %></h3>
                 <%header.products.each do |product| %>
                   <%= render 'shared/product-card', product: product %>
@@ -54,7 +58,7 @@
             <% end %>
           <% end %>
 
-      <%end %>
+
 
     <% end %>
 

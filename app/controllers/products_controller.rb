@@ -12,7 +12,9 @@ class ProductsController < ApplicationController
       @products = Product.global_search(search_params[:query])
 
     else
-      @categories = [Category.find_by(name: search_params[:category])]
+      @category = Category.find_by(name: search_params[:category])
+
+
     end
   end
 

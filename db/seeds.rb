@@ -54,20 +54,20 @@ header3 = Header.create!(name: 'Popeldiwutz')
 header4 = Header.create!(name: '
 Bayrischer Feinbrand vom Fritznhof / Chiemgau - Dirnsberg')
 
-Product.create!(name: 'BARTHEL 1 ', description: 'Seleccion especial de Don Tomaso. Ein idealer Begleiter zu jedem Essen.13 vol.%. 6 Monate Barrica', year: 2015, volume: 0.75, price_cents: 5.90, category: rotwein, header:header1, country: italien)
-Product.create!(name: 'BARTHEL 1 ', description: 'Seleccion especial de Don Tomaso. Ein idealer Begleiter zu jedem Essen.13 vol.%. 6 Monate Barrica', year: 2015, volume: 0.75, price_cents: 5.90, category: weißwein, header:header1, country: italien)
-Product.create!(name: 'BARTHEL 1 ', description: 'Seleccion especial de Don Tomaso. Ein idealer Begleiter zu jedem Essen.13 vol.%. 6 Monate Barrica', year: 2015, volume: 0.75, price_cents: 5.90, category: weißwein, header:header1, country: italien)
-Product.create!(name: 'BARTHEL 2 ', description: 'Seleccion especial de Don Tomaso. Ein idealer Begleiter zu jedem Essen.13 vol.%. 6 Monate Barrica', year: 2015, volume: 0.75, price_cents: 5.90, category: rotwein, header:header2, country: italien)
-Product.create!(name: 'BARTHEL 3 ', description: 'Seleccion especial de Don Tomaso. Ein idealer Begleiter zu jedem Essen.13 vol.%. 6 Monate Barrica', year: 2015, volume: 0.75, price_cents: 5.90, category: rotwein, header:header3, country: italien)
-Product.create!(name: 'PAGO DE SALAMANDER  Reserva ', description: 'Vino de Yema
+Product.create!(name: 'BARTHEL 1 rot ', description: 'Seleccion especial de Don Tomaso. Ein idealer Begleiter zu jedem Essen.13 vol.%. 6 Monate Barrica', year: 2015, volume: 0.75, price_cents: 5.90, category: rotwein, header:header1, country: italien)
+Product.create!(name: 'BARTHEL 1 weiß ', description: 'Seleccion especial de Don Tomaso. Ein idealer Begleiter zu jedem Essen.13 vol.%. 6 Monate Barrica', year: 2015, volume: 0.75, price_cents: 5.90, category: weißwein, header:header1, country: italien)
+Product.create!(name: 'BARTHEL 1 weiß', description: 'Seleccion especial de Don Tomaso. Ein idealer Begleiter zu jedem Essen.13 vol.%. 6 Monate Barrica', year: 2015, volume: 0.75, price_cents: 5.90, category: weißwein, header:header1, country: italien)
+Product.create!(name: 'BARTHEL 2 rot', description: 'Seleccion especial de Don Tomaso. Ein idealer Begleiter zu jedem Essen.13 vol.%. 6 Monate Barrica', year: 2015, volume: 0.75, price_cents: 5.90, category: rotwein, header:header2, country: italien)
+Product.create!(name: 'BARTHEL 3 rot', description: 'Seleccion especial de Don Tomaso. Ein idealer Begleiter zu jedem Essen.13 vol.%. 6 Monate Barrica', year: 2015, volume: 0.75, price_cents: 5.90, category: rotwein, header:header3, country: italien)
+Product.create!(name: 'PAGO DE SALAMANDER  Reserva rot', description: 'Vino de Yema
 Kirschrote Farbe. Feine Intensität der Aromen, dezente Holztöne durch 24 monatige Barriquelagerung.Anfängliche feine  Tanine, die nach entspanntem Dekantieren herrliche Aromen freisetzen: Nelke,Tabak,Kaffee. Gute Struktur. Nachhaltig.  100 % Tempranillo.14,5 vol.%', year: 2013, volume: 0.75, price_cents: 15.90, category: rotwein, header: header1, country: frankreich)
-Product.create!(name: 'BARTHEL Tempranillo ', description: 'Seleccion especial de Don Tomaso. Ein idealer Begleiter zu jedem Essen.13 vol.%. 6 Monate Barrica', year: 2015, volume: 0.75, price_cents: 5.90, category: rotwein, header:header3, country: frankreich)
+Product.create!(name: 'BARTHEL Tempranillo rot', description: 'Seleccion especial de Don Tomaso. Ein idealer Begleiter zu jedem Essen.13 vol.%. 6 Monate Barrica', year: 2015, volume: 0.75, price_cents: 5.90, category: rotwein, header:header3, country: frankreich)
 
 
 
-Product.create!(name: 'OBSTBRAND', description: 'Apfel und Birne vom Chiemsee , mild ', year: 2015, volume: 0.75, price_cents: 5.90, category: feinbrand, header: header4)
-Product.create!(name: ' HIMBEERGEIST', description: 'Himbeerbrand vom Chiemsee, feines Aroma, milder Geschmack', year: 2015, volume: 0.75, price_cents: 5.90, category: feinbrand, header: header4)
-Product.create!(name: "WILLIAM'S CHRIST", description: "aus William's Christ Äpfeln vom Chiemsee, typisches Aroma, milder Geschmack", year: 2015, volume: 0.75, price_cents: 5.90, category: feinbrand, header: header4)
+Product.create!(name: 'OBSTBRAND', description: 'Apfel und Birne vom Chiemsee , mild ', year: 2015, volume: 0.75, price_cents: 5.90, category: feinbrand, header: header4, country: frankreich)
+Product.create!(name: ' HIMBEERGEIST', description: 'Himbeerbrand vom Chiemsee, feines Aroma, milder Geschmack', year: 2015, volume: 0.75, price_cents: 5.90, category: feinbrand, header: header4,country: frankreich)
+Product.create!(name: "WILLIAM'S CHRIST", description: "aus William's Christ Äpfeln vom Chiemsee, typisches Aroma, milder Geschmack", year: 2015, volume: 0.75, price_cents: 5.90, category: feinbrand, header: header4, country: frankreich)
 
 
 
