@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
     elsif search_params[:query].present?
       @search = 1 #until pg:multisearchable inculded
       @products = Product.global_search(search_params[:query])
+      @query = search_params[:query]
 
     else
       @category = Category.find_by(name: search_params[:category])

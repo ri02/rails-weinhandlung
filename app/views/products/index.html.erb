@@ -8,58 +8,61 @@
         <h3><%= button_to "#{category.name.upcase}", products_path, method: :get, params: {products: {category: category.name}}, class: "interim-navigation" %></h3>
       <% end %>
 
+    <% elsif @search.present? %>
+      <% if @products.present? %>
+        <h3> Unsere Ergebnisse zu <%=@query%></h3>
+         <%@products.each do |product| %>
+          <%= render 'shared/product-card', product: product %>
+         <% end %>
+      <% else %>
+        <h3> Leider konnten wir zu dieser Suche keine Produkte in unserem Sortimen finden</h3>
+      <% end %>
     <% else %>
+      <% if @category.products.present? %>
+        <div class="category-name">
+          <h2 ><%= @category.name.upcase %></h2>
+        </div>
 
-
-
-        <% if @category.products.present? %>
-          <div class="category-name">
-            <h2 ><%= @category.name.upcase %></h2>
-          </div>
-
-          <% if @category.super_category.name == 'Weine' %>
-            <div class="country-selection">
-              <%@category.countries.uniq.each do |country| %>
-                <div class="country-selection-card">
-                  <% if country.photo.attached?  %>
-                    <%= cl_image_tag country.photo.key, height: 60, width: 60, crop: :fill %>
-                  <% else %>
-                    <%= image_tag 'logo.png' %>
-                  <% end %>
-                  <h4 class="country-selection-button" ><%= country.name.upcase %></h4>
-                </div>
-
-              <% end %>
-            </div>
-
+        <% if @category.super_category.name == 'Weine' %>
+          <div class="country-selection">
             <%@category.countries.uniq.each do |country| %>
-              <div class="country-wines">
-                <h3 class="country-name"><%= country.name.upcase %></h3>
-                <% @category.headers.uniq.each do |header| %>
-                  <% if  header.countries.include?(country) %>
-                    <h3 class="header-name"><%= header.name.upcase %></h3>
-                  <% end %>
-                  <%@category.products.each do |product| %>
-                      <% if product.country == country && product.header == header%>
-                        <%= render 'shared/product-card', product: product %>
-                      <%end %>
-                  <% end %>
+              <div class="country-selection-card">
+                <% if country.photo.attached?  %>
+                  <%= cl_image_tag country.photo.key, height: 60, width: 60, crop: :fill %>
+                <% else %>
+                  <%= image_tag 'logo.png' %>
                 <% end %>
+                <h4 class="country-selection-button" ><%= country.name.upcase %></h4>
               </div>
 
             <% end %>
-            <% else %>
-              <%@category.headers.uniq.each do |header| %>
-                <h3 class="header-name"><%= header.name.upcase %></h3>
-                <%header.products.each do |product| %>
-                  <%= render 'shared/product-card', product: product %>
+          </div>
+
+          <%@category.countries.uniq.each do |country| %>
+            <div class="country-wines">
+              <h3 class="country-name"><%= country.name.upcase %></h3>
+              <% @category.headers.uniq.each do |header| %>
+                <% if  header.countries.include?(country) %>
+                  <h3 class="header-name"><%= header.name.upcase %></h3>
+                <% end %>
+                <%@category.products.each do |product| %>
+                    <% if product.country == country && product.header == header%>
+                      <%= render 'shared/product-card', product: product %>
+                    <%end %>
                 <% end %>
               <% end %>
+            </div>
+
+          <% end %>
+        <% else %>
+          <%@category.headers.uniq.each do |header| %>
+            <h3 class="header-name"><%= header.name.upcase %></h3>
+            <%header.products.each do |product| %>
+              <%= render 'shared/product-card', product: product %>
             <% end %>
           <% end %>
-
-
-
+        <% end %>
+      <% end %>
     <% end %>
 
   </div>
