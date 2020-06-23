@@ -48,6 +48,10 @@ body{
     margin: 0px;
   }
 
+  input:hover{
+    color: $dark-gray;
+  }
+
 
   display: grid;
   grid-template-columns: 1fr 12fr 1fr ;
