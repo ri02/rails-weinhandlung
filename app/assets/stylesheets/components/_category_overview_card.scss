@@ -1,0 +1,42 @@
+.category-overview-item{
+    text-align: center;
+    padding: 20%;
+    border: double;
+    border-color: $gold;
+    border-width: thick;
+    color: $gold;
+    background: $base-color;
+    margin: 10%;
+    width: 400px;
+
+    h2{
+      margin:0px
+    }
+
+
+}
+
+.category_overview{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+
+}
+
+
+@media (max-width: 800px) {
+
+  .category-overview-item{
+    width: 280px;
+    padding: 10%;
+  }
+}
+
+
+@media (max-width: 500px) {
+
+  .category-overview-item{
+    width: 180px;
+    padding: 10%;
+  }
+}

@@ -4,9 +4,15 @@
     <%= render 'shared/navbar', super_categories: @super_categories %>
 
     <% if @category_overview.present? %>
-      <% @category_overview.each do |category| %>
-        <h3><%= button_to "#{category.name.upcase}", products_path, method: :get, params: {products: {category: category.name}}, class: "interim-navigation" %></h3>
-      <% end %>
+      <div class="category_overview">
+        <% @category_overview.each do |category| %>
+          <%= button_to products_path, method: :get, params: {products: {category: category.name}}, class: "category-overview-item" do%>
+            <h2><%= category.name.upcase%></h2>
+          <% end %>
+        <% end %>
+      </div>
+
+
 
     <% elsif @search.present? %>
       <% if @products.present? %>
