@@ -22,7 +22,7 @@
       </div>
       <div class="home-main-image">
         <% if @administration.photo.attached?  %>
-          <%= cl_image_tag @administration.photo.key, height: 400, width: 400, crop: :fill %>
+          <%= cl_image_tag @administration.photo.key, height: 1000, width: 1000, crop: :fill %>
         <% end %>
       </div>
     </div>
