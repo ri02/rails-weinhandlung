@@ -12,11 +12,17 @@
   align-items: center;
   flex-direction: column;
   overflow: hidden;
-  border: solid 1px $base-color;
+  border: double 3px #007a53;
   margin: 2% 2%;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.03);
   padding: 3px;
-  background-color: white;
+  border-radius: 1px;
+  background-color: $background-color;
+}
+
+.country-selection-card:hover {
+  border-color: #495057;
+  background-color: #f8f9fa;
 }
 
 .country-selection-card img {
@@ -33,5 +39,6 @@
 }
 
 .country-selection-card.active{
-  background-color: #007a5347;
+  background-color: #f8f9fa;
+  border-color: #495057
 }

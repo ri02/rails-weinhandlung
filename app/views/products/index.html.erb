@@ -36,7 +36,7 @@
                 <% if country.photo.attached?  %>
                   <%= cl_image_tag country.photo.key, height: 60, width: 60, crop: :fill %>
                 <% else %>
-                  <%= image_tag 'logo.png' %>
+                  <%= image_tag 'globe.svg' %>
                 <% end %>
                 <h4 class="country-selection-button" ><%= country.name.upcase %></h4>
               </div>
