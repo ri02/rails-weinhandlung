@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :destroy]
   def show
+    @super_categories= SuperCategory.includes([:categories])
     @cart = @current_cart
   end
 

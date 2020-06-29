@@ -14,6 +14,8 @@ class ProductsController < ApplicationController
 
     else
       @category = Category.find_by(name: search_params[:category])
+      @barthel_products = Product.where(barthel_special: true)
+
     end
   end
 
