@@ -15,6 +15,23 @@
   color: $base-color;
   text-align:center;
   min-width: 250px;
+
+}
+
+
+.home-header-image h1{
+  display: flex;
+  align-items: baseline;
+  justify-content: right;
+  width: 10%;
+  img{
+   height:2em;
+  }
+}
+
+.home-header-empty{
+  width:10%
+
 }
 
 
