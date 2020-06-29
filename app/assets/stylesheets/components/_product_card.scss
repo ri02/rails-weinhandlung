@@ -2,10 +2,11 @@
   overflow: hidden;
   min-height: 120px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.03);
   display: flex;
   align-items: center;
   margin: 2% 0;
+
 }
 
 .card-product img {
@@ -50,4 +51,14 @@
 }
 .card-product-infos-middle{
   width:90%
+}
+
+.card-product-infos-bottom-button{
+  background-color: transparent;
+  border: transparent;
+}
+
+.card-product-infos-bottom-right{
+  display:flex;
+  align-item: center;
 }

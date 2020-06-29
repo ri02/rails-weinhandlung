@@ -2,7 +2,7 @@
   <% if product.photo.attached?  %>
     <%= cl_image_tag product.photo.key, height: 300, width: 400, crop: :fill %>
   <% else %>
-    <%= image_tag 'logo.png' %>
+    <%= image_tag 'barthel.png' %>
   <% end %>
   <div class="card-product-infos">
     <div class="card-product-infos-top">
@@ -14,8 +14,13 @@
     </div>
     <div class="card-product-infos-bottom">
       <p><%= product.volume %></p>
-      <p><%= humanized_money_with_symbol(product.price)%></p>
-      <%= button_to "Hinzufügen", line_items_path(:product_id => product.id) %>
+      <div class="card-product-infos-bottom-right">
+        <p> <strong><%= humanized_money_with_symbol(product.price)%></strong></p>
+        <%= button_to line_items_path(:product_id => product.id), class: "card-product-infos-bottom-button"  do%>
+          <p><i class="fas fa-shopping-cart"></i></p>
+        <% end %>
+      </div>
+
     </div>
   </div>
 </div>
