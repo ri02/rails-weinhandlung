@@ -16,12 +16,16 @@
 
     <% elsif @search.present? %>
       <% if @products.present? %>
-        <h3> Unsere Ergebnisse zu <%=@query%></h3>
+        <div class="category-name">
+          <h3> Unsere Ergebnisse zu  <i><%=@query%></i></h3>
+        </div>
          <%@products.each do |product| %>
           <%= render 'shared/product-card', product: product %>
          <% end %>
       <% else %>
-        <h3> Leider konnten wir zu dieser Suche keine Produkte in unserem Sortimen finden</h3>
+        <div class="category-name">
+          <h3> Leider konnten wir zu Ihrer Suche keine Produkte in unserem Sortiment finden</h3>
+        </div>
       <% end %>
     <% else %>
       <% if @category.products.present? %>
