@@ -28,7 +28,7 @@
         </div>
       <% end %>
     <% else %>
-      <% if @category.products.present? %>
+      <% if @category.present? && @category.products.present? %>
         <div class="category-name">
           <h2 ><%= @category.name.upcase %></h2>
         </div>
