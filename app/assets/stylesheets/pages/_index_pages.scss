@@ -66,6 +66,7 @@
 
 .overview-product-super_category{
     text-align: center;
+    text-overflow: clip;
     padding: 7%;
     border: double;
     border-color: $gold;
@@ -77,6 +78,7 @@
     text-align:center ;
     color: white;
     padding-top: 20px;
+
    }
 
 }
@@ -86,6 +88,7 @@
 
 .overview-product-category-item{
   margin: 8px;
+
 }
 
 
@@ -99,9 +102,7 @@
   }
 
 
-.overview-product.active{
 
-}
 
 
 @media (max-width: 700px) {
@@ -124,7 +125,9 @@
   .overview-product-super_category{
      input{
       padding-top: 0px;
-      color: $gold
+      color: $gold;
+      width:100%;
+      white-space: normal;
      }
 
       input:hover{
