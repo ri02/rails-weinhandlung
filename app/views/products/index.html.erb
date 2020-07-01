@@ -7,7 +7,7 @@
       <div class="category_overview">
         <% @category_overview.each do |category| %>
           <% if category.super_category.name == 'Barthel Spezial' %>
-           <%= button_to recommended_path, class: "category-overview-item" do%>
+           <%= button_to recommended_path, method: :get, class: "category-overview-item" do%>
              <h2>RECOMMENDED</h2>
            <% end %>
           <% end %>

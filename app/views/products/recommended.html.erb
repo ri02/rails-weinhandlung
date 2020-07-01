@@ -1,1 +1,24 @@
-<h1>here are the recommended Items displayed</h1>
+<div class="con">
+  <div class="side"></div>
+  <div class="middle">
+    <%= render 'shared/navbar', super_categories: @super_categories %>
+    <div class="category-name">
+      <h2>Empfehlungen</h2>
+    </div>
+
+    <% @recommended_categories.uniq.each do |category| %>
+      <% category.headers.uniq.each do |header| %>
+          <h3 class="header-name"><%= header.name.upcase %></h3>
+        <%category.products.each do |product| %>
+            <% if product.premium %>
+              <%= render 'shared/product-card', product: product %>
+            <%end %>
+        <% end %>
+      <% end %>
+    <% end %>
+
+  </div>
+  <div class="side"></div>
+</div>
+
+

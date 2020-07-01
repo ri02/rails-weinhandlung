@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index]
+  skip_before_action :authenticate_user!, only: [:index, :recommended]
 
 
   def index
@@ -19,7 +19,10 @@ class ProductsController < ApplicationController
   end
 
   def recommended
-    @recommended_product = Product.where(premium: true)
+    @super_categories= SuperCategory.includes([:categories])
+    @recommended_products = Product.where(premium: true)
+    @recommended_categories = Category.joins(:products).where("products.premium = ?", true)
+
   end
 
 

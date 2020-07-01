@@ -10,6 +10,9 @@
         <h4 class= "nav-list-item nav-dropdown-top-item"> <%=super_category.name.upcase%></h4>
       </div>
       <div class="nav-dropdown-bottom">
+          <% if super_category.name == 'Barthel Spezial' %>
+            <h4><%= button_to "EMPFEHLUNGEN", recommended_path , method: :get, class: "nav-list-item nav-dropdown-bottom-item"%></h4>
+          <% end %>
           <% super_category.categories.each do |category| %>
           <h4> <%= button_to "#{category.name.upcase}", products_path, method: :get, params: {products: {category: category.name}}, class: "nav-list-item nav-dropdown-bottom-item" %></h4>
         <% end %>
