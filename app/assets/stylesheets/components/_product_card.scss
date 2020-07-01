@@ -1,11 +1,11 @@
 .card-product {
-  overflow: hidden;
   min-height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.03);
   display: flex;
   align-items: center;
-  margin: 2% 0;
+  margin: 5% 0;
+  position: relative
 
 }
 
@@ -62,3 +62,17 @@
   display:flex;
   align-item: center;
 }
+
+.card-product-special-fresh{
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  background-color:$base-color ;
+  color: $gold;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+

@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   resources :pages , only: [:index]
-  resources :products, only: [:index], as: 'products'
+  resources :products, only: [:index]
+  get 'products/recommended', to: 'products#recommended', as:'recommended'
 
 
   get 'carts/:id' => "carts#show", as: "cart"

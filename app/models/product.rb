@@ -11,7 +11,7 @@ class Product < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :global_search,
-    against: [ :name, :description],
+    against: [ :name, :description, :year],
     associated_against: {
       category: [ :name],
       country: [ :name],

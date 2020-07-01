@@ -6,6 +6,11 @@
     <% if @category_overview.present? %>
       <div class="category_overview">
         <% @category_overview.each do |category| %>
+          <% if category.super_category.name == 'Barthel Spezial' %>
+           <%= button_to recommended_path, class: "category-overview-item" do%>
+             <h2>RECOMMENDED</h2>
+           <% end %>
+          <% end %>
           <%= button_to products_path, method: :get, params: {products: {category: category.name}}, class: "category-overview-item" do%>
             <h2><%= category.name.upcase%></h2>
           <% end %>
