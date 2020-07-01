@@ -1,16 +1,18 @@
 .category-overview-item{
     text-align: center;
-    padding: 20%;
+    padding: 15%;
     border: double;
     border-color: $gold;
     border-width: thick;
     color: $gold;
     background: $base-color;
-    margin: 10%;
+    margin-top: 10%;
     width: 400px;
 
     h2{
-      margin:0px
+      margin: 0 auto;
+      vertical-align: middle;
+      overflow: hidden
     }
 
 
@@ -36,7 +38,7 @@
 @media (max-width: 500px) {
 
   .category-overview-item{
-    width: 180px;
+    min-width: fit-content;
     padding: 10%;
   }
 }

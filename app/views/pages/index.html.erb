@@ -19,6 +19,9 @@
           <h1 class= "overview-product-super_category-item"><%=super_category.name.upcase %></h1>
           <div class="overview-product-category-static">
           <% super_category.categories.each do |category| %>
+            <% if super_category.name == 'Barthel Spezial' %>
+              <h3><%= button_to "EMPFEHLUNGEN", recommended_path , method: :get, class: "overview-product-category-item"%></h3>
+            <% end %>
             <h3><%= button_to "#{category.name.upcase}", products_path, method: :get, params: {products: {category: category.name}}, class: "overview-product-category-item" %></h3>
             <% end %>
           </div>

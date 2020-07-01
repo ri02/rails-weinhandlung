@@ -8,7 +8,7 @@
         <% @category_overview.each do |category| %>
           <% if category.super_category.name == 'Barthel Spezial' %>
            <%= button_to recommended_path, method: :get, class: "category-overview-item" do%>
-             <h2>RECOMMENDED</h2>
+             <h2>EMPFEHLUNGEN</h2>
            <% end %>
           <% end %>
           <%= button_to products_path, method: :get, params: {products: {category: category.name}}, class: "category-overview-item" do%>
