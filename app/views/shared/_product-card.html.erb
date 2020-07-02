@@ -17,8 +17,11 @@
       <div class="card-product-infos-bottom-right">
         <p> <strong><%= humanized_money_with_symbol(product.price)%></strong></p>
         <%= button_to line_items_path(:product_id => product.id), class: "card-product-infos-bottom-button"  do%>
-          <p><i class="fas fa-shopping-cart"></i></p>
+        <div class="shopping-icon">  <p><i class="fas fa-shopping-cart"></i></p></div>
         <% end %>
+        <div class= "popup">
+        <%= render 'shared/product_card_popup', product: product %>
+        </div>
       </div>
 
     </div>

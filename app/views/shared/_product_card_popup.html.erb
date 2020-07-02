@@ -1,0 +1,12 @@
+
+<p>number of items</p>
+<% if product.line_items.empty? %>
+  <%= link_to "Plus 1", line_items_path(product_id: product.id),remote: true ,method: :post %>
+<% end %>
+<%product.line_items.each do |item|%>
+  <%= item.quantity %>
+  <%= link_to "Plus 2", line_item_add_path(id: item.id),  remote: true ,method: :post %>
+  <%= link_to "Minus", line_item_reduce_path(id: item.id), remote: true ,method: :post %>
+<% end %>
+ <p>weiterstöbern</p><p> <%= link_to "Warenkorb", cart_path(@current_cart) %></p>
+
