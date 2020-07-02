@@ -35,7 +35,6 @@ const toggleMenu = () => {
     const active = e.currentTarget.querySelector(".active")
 
     if (active===null){
-    const dropdownBottom = Array.from(document.querySelectorAll('.nav-dropdown-bottom'))
     dropdownBottom.forEach( (item) => item.classList.remove('active'))
     }
 
@@ -46,7 +45,6 @@ const toggleMenu = () => {
 
    const removeMenu = (e) =>{
     if (!e.target.matches('.nav-list-item')) {
-      const dropdownBottom = Array.from(document.querySelectorAll('.nav-dropdown-bottom'))
       dropdownBottom.forEach( (item) => item.classList.remove('active'))
       return};
    }
