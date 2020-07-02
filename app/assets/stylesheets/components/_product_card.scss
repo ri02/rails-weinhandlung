@@ -77,11 +77,12 @@
 
 .popup{
   position: absolute;
-  background-color: $base-color;
+  background-color: $gold;
   width: 200px;
   height: 140px;
   z-index: 1000;
   top: -10px;
   right: 0px;
   border-radius: 3px;
+  text-align:center
 }
