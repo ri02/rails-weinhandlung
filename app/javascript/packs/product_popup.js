@@ -1,46 +1,25 @@
 
-const popup = () => {
-
- const icons = document.querySelectorAll(.shopping-icon)
- const pop =
- const toggle_popup = () => {
-  window.open
- }
-
- icons.forEach( (icon) => {
-  icon.addEventListener('click', toggle_popup)
-   // statements
- });
-}
-
-
 const togglePopup = () => {
 
   const icon = Array.from(document.querySelectorAll('.shopping-icon'))
   const popup = Array.from(document.querySelectorAll('.popup'))
-
+  const popup_close = Array.from(document.querySelectorAll('.popup-close'))
 
   const togglePopupItem = (e) => {
-    const active = e.currentTarget.querySelector(".active")
 
-    if (active===null){
-    icon.forEach( (item) => item.classList.remove('active'))
-    }
-
-    const popupBox = e.currentTarget.querySelector(".popup")
-    popupBox.classList.toggle("active")
+    popup.forEach( (item) => item.classList.remove('active'))
+    const popupBox = e.currentTarget.nextElementSibling
+    popupBox.classList.add("active")
   }
 
 
    const removePopup = (e) =>{
-    if (!e.target.matches('.nav-list-item')) {
-      icon.forEach( (item) => item.classList.remove('active'))
-      return};
+    popup.forEach( (item) => item.classList.remove('active'))
    }
 
-  if (dropdownTop){
-    document.addEventListener('click', removePopup)
-    popup.forEach(item => item.addEventListener('click', togglePopupItem))
+  if (popup){
+    popup_close.forEach(item => item.addEventListener('click', removePopup))
+    icon.forEach(item => item.addEventListener('click', togglePopupItem))
   }
 
 }

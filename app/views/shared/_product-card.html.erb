@@ -16,10 +16,15 @@
       <p><%= product.volume %></p>
       <div class="card-product-infos-bottom-right">
         <p> <strong><%= humanized_money_with_symbol(product.price)%></strong></p>
-        <div class="shopping-icon">  <p><i class="fas fa-shopping-cart"></i></p></div>
-        <div class= "popup">
-        <%= render 'shared/product_card_popup', product: product %>
+        <div class="popup-toggle">
+          <div class="shopping-icon">
+            <p><i class="fas fa-shopping-cart"></i></p>
+          </div>
+          <div class= "popup">
+            <%= render 'shared/product_card_popup', product: product %>
+          </div>
         </div>
+
       </div>
 
     </div>

@@ -1,6 +1,6 @@
 
 <div class="popup-close">
-  <p><i class="fas fa-times"></i></p>
+  <h4><i class="fas fa-times"></i></h4>
 </div>
 
 <% if product.line_items.empty? %>
@@ -21,8 +21,6 @@
       <% end %></h3>
   </div>
 <% end %>
-<div class="popup-exit">
-  <h4>WEITERSTÖBERN</h4>
-</div>
- <p> <%= link_to "Zum Warenkorb", cart_path(@current_cart) %></p>
+
+ <h4> <%= link_to "ZUM WARENKORB", cart_path(@current_cart) %></h4>
 
