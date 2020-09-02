@@ -3,23 +3,20 @@
   <h4><i class="fas fa-times"></i></h4>
 </div>
 
-<% if product.line_items.empty? %>
-  <%= link_to line_items_path(product_id: product.id),remote: true ,method: :post do %>
-    <h3>HINZUFÜGEN</h3>
-  <% end %>
-<% end %>
-<%product.line_items.each do |item|%>
-  <p>Anzahl im Warenkorb</p>
 
-  <div class= 'popup-rating'>
-    <h3 class= 'minus'><%= link_to  line_item_reduce_path(id: item.id), remote: true ,method: :post do %>
-       <i class="fas fa-minus"></i>
-      <% end %></h3>
-    <h2 class= 'number'><%= item.quantity %></h2>
-    <h3 class= 'plus'><%= link_to line_item_add_path(id: item.id),  remote: true ,method: :post do %>
-      <i class="fas fa-plus"></i>
-      <% end %></h3>
-  </div>
+<%product.line_items.each do |item|%>
+ <% if @line_items.include?(item) %>
+    <p>Anzahl im Warenkorb</p>
+    <div class= 'popup-rating'>
+      <h3 class= 'minus'><%= link_to  line_item_reduce_path(id: item.id), remote: true,method: :post do %>
+         <i class="fas fa-minus"></i>
+        <% end %></h3>
+      <h2 class= 'number'><%= item.quantity %></h2>
+      <h3 class= 'plus'><%= link_to line_item_add_path(id: item.id),  remote: true ,method: :post do %>
+        <i class="fas fa-plus"></i>
+        <% end %></h3>
+    </div>
+  <% end %>
 <% end %>
 
  <h4> <%= link_to "ZUM WARENKORB", cart_path(@current_cart) %></h4>

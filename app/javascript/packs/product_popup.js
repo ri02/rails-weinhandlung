@@ -7,6 +7,7 @@ const togglePopup = () => {
   const number = Array.from(document.querySelectorAll('.number'))
   const plus = Array.from(document.querySelectorAll('.plus'))
   const minus = Array.from(document.querySelectorAll('.minus'))
+  const reload = Array.from(document.querySelectorAll('.popup-reload'))
 
   const togglePopupItem = (e) => {
 
@@ -32,11 +33,17 @@ const togglePopup = () => {
     number.innerHTML = newNumber
   }
 
+  const reloadPopup = (e) => {
+    const currentPopup = e.currentTarget.parentElement
+    console.log(currentPopup)
+  }
+
   if (popup){
     popup_close.forEach(item => item.addEventListener('click', removePopup))
     icon.forEach(item => item.addEventListener('click', togglePopupItem))
     plus.forEach(item => item.addEventListener('click', addNumber))
     minus.forEach(item => item.addEventListener('click', substractNumber))
+    reload.forEach(item => item.addEventListener('click', reloadPopup))
 
   }
 

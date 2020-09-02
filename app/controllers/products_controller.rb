@@ -3,7 +3,10 @@ class ProductsController < ApplicationController
 
 
   def index
+    @cart = @current_cart
     @super_categories= SuperCategory.includes([:categories])
+    @line_items = LineItem.where('cart_id = ?', @cart.id)
+
     if search_params[:super_category].present?
       @category_overview = Category.joins(:super_category).where("super_categories.name = ?", search_params[:super_category])
 

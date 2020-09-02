@@ -24,4 +24,5 @@ class Product < ApplicationRecord
       tsearch: { prefix: true }
     }
 
+
 end
